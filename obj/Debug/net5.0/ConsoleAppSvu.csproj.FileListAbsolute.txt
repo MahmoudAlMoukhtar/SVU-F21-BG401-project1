@@ -1,0 +1,16 @@
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ConsoleAppSvu.exe
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ConsoleAppSvu.deps.json
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ConsoleAppSvu.runtimeconfig.json
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ConsoleAppSvu.runtimeconfig.dev.json
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ConsoleAppSvu.dll
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ref\ConsoleAppSvu.dll
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\bin\Debug\net5.0\ConsoleAppSvu.pdb
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.csproj.AssemblyReference.cache
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.AssemblyInfoInputs.cache
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.AssemblyInfo.cs
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.csproj.CoreCompileInputs.cache
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.dll
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ref\ConsoleAppSvu.dll
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.pdb
+C:\Users\A\Documents\program_svu\ConsoleAppSvu\obj\Debug\net5.0\ConsoleAppSvu.genruntimeconfig.cache
