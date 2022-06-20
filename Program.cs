@@ -19,7 +19,7 @@ namespace ConsoleAppSvu
                 Console.WriteLine("Error: this value not valid, Please!!! enter the maximum number of questions greater than 0?");
                 numQues = Convert.ToInt32(Console.ReadLine());
             }
-            addLineBreak();
+            Console.WriteLine("===============================");
 
             //-----------------------------------------------------------------
 
@@ -45,8 +45,8 @@ namespace ConsoleAppSvu
                 while (length < 3 || length > 100)
                 {
                     Console.WriteLine("please!!! inter number between 3 and 100");
-                    length = Convert.ToInt32(Console.ReadLine());
-                    addLineBreak();
+                    length = int.Parse(Console.ReadLine());
+                    Console.WriteLine("===============================");
                 }
                 //----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -80,18 +80,12 @@ namespace ConsoleAppSvu
                             randomString += (char)num;
                             break;
                     }
-
-
-                    //int randomTypeIndex = random.Next(0, typeRandomChar.Length);
-                    //randomString = randomChar(arr, numbers, typeRandomChar, random, randomString, j, randomTypeIndex);
-
                 }
                 //store string in array strQues
                 strQues[i] = randomString;
                 //Print string (randomString)
                 Console.WriteLine(randomString);
                 //----------------------------------------------------------------------------------------------------
-
 
 
                 //Array containing question types
@@ -101,44 +95,93 @@ namespace ConsoleAppSvu
                 arrTypeForAllQues[i] = randomType;
 
 
-                //function clucate correct answer and store in correctAnswers array   
-                checkNumbers(correctAnswers, i, length, numbers, randomType, randomString);
-                //-----------------------------------------------------------
+                ////function clucate correct answer and store in correctAnswers array   
+                //checkNumbers(correctAnswers, i, length, numbers, randomType, randomString);
+                //switch statement case odd, even, prime
+                switch (randomType)
+                {
+                    //case odd
+                    //check how many odd number in array numbers
+                    case "odd":
+                        int count = 0;
+                        for (int j = 0; j < length; j++)
+                        {
+                            if (randomString[j] >= '0' && randomString[j] < '9')
+                            {
+                                Convert.ToInt32(randomString[j]);
+                                if (randomString[j] % 2 != 0)
+                                {
+                                    count++;
+                                }
+                            }
 
+                        }
+                        //store the correct answer in array
+                        correctAnswers[i] = count;
+                        break;
+                    //case even
+                    //check how many even number in array numbers
+                    case "even":
+                        int count2 = 0;
+                        for (int j = 0; j < length; j++)
+                        {
+
+                            if (randomString[j] >= '0' && randomString[j] < '9')
+                            {
+                                Convert.ToInt32(randomString[j]);
+                                if (randomString[j] % 2 == 0)
+                                {
+                                    count2++;
+                                }
+                            }
+                        }
+                        //store the correct answer in array
+                        correctAnswers[i] = count2;
+                        break;
+                    //case prime
+                    //check how many prime number in array numbers
+                    case "prime":
+                        int count3 = 0;
+                        for (int j = 0; j < length; j++)
+                        {
+                            if (randomString[j] >= '0' && randomString[j] < '9')
+                            {
+                                Convert.ToInt32(randomString[j]);
+                                if (randomString[j] > 1 && (randomString[j] == 2 || randomString[j] % 2 != 0))
+                                {
+                                    count3++;
+                                }
+                            }
+
+                        }
+                        //store the correct answer in array
+                        correctAnswers[i] = count3;
+                        break;
+                    default:
+                        Console.WriteLine("error");
+                        break;
+                }
+                //-----------------------------------------------------------
 
                 //Ask the user how many numbers of the randomType
                 Console.WriteLine($"how many times number {randomType} in this string if you want skip this question input (ignore) to ");
 
                 //string answer
                 string userAnsStr = Console.ReadLine().ToLower();
-                addLineBreak();
+                Console.WriteLine("===============================");
                 //if answer is ignore store 0 in rateAnswers then skip the question and go to next question
                 if (userAnsStr == "ignore")
                 {
                     rateAnswers[i] = 0;
                     continue;
                 }
-                int userAnsNum = Convert.ToInt32(userAnsStr); //convert string answer to number 
+                int userAnsNum = int.Parse(userAnsStr); //convert string answer to number 
                 userAnswers[i] = userAnsNum;//store user answer in array
 
                 //compare beetween ans user and correct answer then store the rate in rateAnswers array
                 int testAns = userAnsNum == correctAnswers[i] ? rateAnswers[i] = 1 : rateAnswers[i] = 0;
             }
             //-----------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -177,115 +220,11 @@ namespace ConsoleAppSvu
             }
             while (!exitFromApp);
             //-----------------------------------------------
-
         }
-
-
-
-
-
-
-
 
 
         //Functions**************************************************************************
-        private static void addLineBreak()
-        {
-            Console.WriteLine("===============================");
-        }
-
-        private static void checkNumbers(int[] correctAnswers, int i, int length, int[] numbers, string randomType, string randomString)
-        {
-            //switch statement case odd, even, prime
-            switch (randomType)
-            {
-                //case odd
-                //check how many odd number in array numbers
-                case "odd":
-                    int count = 0;
-                    for (int j = 0; j < length; j++)
-                    {
-                        if (randomString[j] >= '0' && randomString[j] < '9')
-                        {
-                            Convert.ToInt32(randomString[j]);
-                            if (randomString[j] % 2 != 0)
-                            {
-                                count++;
-                            }
-                        }
-
-                        
-                    }
-                    //store the correct answer in array
-                    correctAnswers[i] = count;
-                    break;
-                //case even
-                //check how many even number in array numbers
-                case "even":
-                    int count2 = 0;
-                    for (int j = 0; j < length; j++)
-                    {
-
-                        if (randomString[j] >= '0' && randomString[j] < '9')
-                        {
-                            Convert.ToInt32(randomString[j]);
-                            if (randomString[j] % 2 == 0)
-                            {
-                                count2++;
-                            }
-                        }
-                        
-                    }
-                    //store the correct answer in array
-                    correctAnswers[i] = count2;
-                    break;
-                //case prime
-                //check how many prime number in array numbers
-                case "prime":
-                    int count3 = 0;
-                    for (int j = 0; j < length; j++)
-                    {
-                        if (randomString[j] >= '0' && randomString[j] < '9')
-                        {
-                            Convert.ToInt32(randomString[j]);
-                            if (randomString[j] > 1 && (randomString[j] == 2 || randomString[j] % 2 != 0))
-                            {
-                                count3++;
-                            }
-                        }
-                        
-                    }
-                    //store the correct answer in array
-                    correctAnswers[i] = count3;
-                    break;
-                default:
-                    Console.WriteLine("error");
-                    break;
-            }
-        }
-
-        private static string randomChar(string[] arr, int[] numbers, string[] typeRandomChar, Random random, string randomString, int j, int randomTypeIndex)
-        {
-            //switch statement case number, letter
-            int rndNumber;
-            switch (typeRandomChar[randomTypeIndex])
-            {
-                case "number":
-                    rndNumber = random.Next(0, 9);
-                    //add to numbers array
-                    numbers[j] = rndNumber;
-                    randomString += rndNumber.ToString();
-                    break;
-
-                case "letter":
-                    rndNumber = random.Next(60, 86);
-                    randomString += (char)rndNumber;
-                    break;
-            }
-
-            return randomString;
-        }
-
+        
         //method to print length of false values in array rateAnswers
         public static void CountWrongAnswers(int[] arr)
         {
@@ -319,7 +258,7 @@ namespace ConsoleAppSvu
         public static void PrintAllQues(string[] strQues, int[] answer, int[] correctAnswers, string[] arrTypeForAllQues)
         {
             Console.WriteLine("strQues    type Question    user answer    correctAnswers");
-            addLineBreak();
+            Console.WriteLine("===============================");
             for (int i = 0; i < strQues.Length; i++)
             {
                 Console.WriteLine($"{strQues[i]}     {arrTypeForAllQues[i]}     {answer[i]}     {correctAnswers[i]}");
